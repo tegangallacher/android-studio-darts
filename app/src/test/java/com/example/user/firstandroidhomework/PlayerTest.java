@@ -57,9 +57,19 @@ public class PlayerTest {
 
     @Test
     public void replaceLowestRankedPlayer() {
-        player = new Player("Peter Wright", "Snakebite", 2);
-        ranking.set(1, player);
-        assertEquals("Name: Peter Wright, Nickname: Snakebite, Ranking: 2", ranking.getRankingAtIndex(2).toString());
+        Player player1 = new Player("Peter Wright", "Snakebite", 3);
+        Player player2 = new Player("Phil Taylor", "The Power", 4);
+        Player player3 = new Player("Adrian Lewis", "Jackpot", 5);
+        Player player4 = new Player("James Wade", "The Machine", 6);
+        Player player5 = new Player("Dave Chisnall", "Chizzy", 7);
+        ranking.add(player1);
+        ranking.add(player2);
+        ranking.add(player3);
+        ranking.add(player4);
+        ranking.add(player5);
+        Player player6 = new Player("Mensur Suljović", "The Gentle", 7);
+        ranking.replaceLastPlayer(player6);
+        assertEquals("Name: Mensur Suljović, Nickname: The Gentle, Ranking: 7", ranking.getRankingAtIndex(6).toString());
     }
 
 

@@ -36,9 +36,16 @@ public class Ranking {
         playerRankings.add(player);
     }
 
-    public int getRankingSize() {
+    public int size() {
         return playerRankings.size();
     }
+
+    public void replaceLastPlayer(Player player) {
+        int index = (size() - 1);
+        playerRankings.remove(index);
+        add(player);
+    }
+
 
     private void setupPlayerRankings() {
         Player[] playersToAdd = {
@@ -50,6 +57,10 @@ public class Ranking {
             add(player);
         }
     }
+
+    public void set(int i, Player player) {
+    }
+
 
 
 }
